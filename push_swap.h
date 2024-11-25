@@ -6,7 +6,7 @@
 /*   By: yel-mens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:27:02 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/15 19:33:14 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/23 12:34:44 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_node
  * * * * * */
 
 t_node	*ft_parse(int argc, char **argv);
-void	ft_putstr(char str);
+void	ft_putstr(char *str);
 int		ft_atoi(char *str);
 
 /* * * * * * * *
@@ -38,9 +38,10 @@ int		ft_atoi(char *str);
  *  OPERATIONS *
  * * * * * * * */
 
-int		ft_add_end_stack(t_node *stack, int data);
+t_node	*ft_init_stack();
+int		ft_add_end_stack(t_node **stack, int data);
 int		ft_size_stack(t_node *stack);
-void	ft_free_stacks(t_node *stack_a, t_node *stack_b);
+void	ft_free_stacks(t_node **stack_a, t_node **stack_b);
 int		ft_is_sorted(t_node *stack);
 
 void	ft_sort_small_stack(t_node *stack, int size_stack);
@@ -52,16 +53,16 @@ void	ft_sort_stacks(t_node *stack_a, t_node *stack_b);
  *  OPERATION  *
  * * * * * * * */
 
-void	push_a(t_node *stack_a, t_node *stack b);
-void	push_b(t_node *stack_a, t_node *stack b);
+void	push_a(t_node **stack_a, t_node **stack_b);
+void	push_b(t_node **stack_a, t_node **stack_b);
 
-void	swap_a(t_node *stack_a);
-void	swap_b(t_node *stack_b);
-void	swap_s(t_node *stack_a, t_node *stack_b);
+void	swap_a(t_node **stack_a);
+void	swap_b(t_node **stack_b);
+void	swap_s(t_node **stack_a, t_node **stack_b);
 
-void	rotate_a(t_node *stack_a);
-void	rotate_b(t_node *stack_b);
-void	rotate_r(t_node *stack_a, t_node *stack_b);
+void	rotate_a(t_node **stack_a);
+void	rotate_b(t_node **stack_b);
+void	rotate_r(t_node **stack_a, t_node **stack_b);
 
 void	reverse_rotate_a(t_node *stack_a);
 void	reverse_rotate_b(t_node *stack_b);
