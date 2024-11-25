@@ -43,10 +43,11 @@ int		ft_add_end_stack(t_node **stack, int data);
 int		ft_size_stack(t_node *stack);
 void	ft_free_stacks(t_node **stack_a, t_node **stack_b);
 int		ft_is_sorted(t_node *stack);
+void	ft_reset_index(t_node *stack);
 
-void	ft_sort_small_stack(t_node *stack, int size_stack);
-void	ft_sort_three_stack(t_node *stack);
-void	ft_sort_stacks(t_node *stack_a, t_node *stack_b);
+void	ft_sort_small_stack(t_node **stack, int size_stack);
+void	ft_sort_three_stack(t_node **stack);
+void	ft_sort_stacks(t_node **stack_a, t_node **stack_b);
 
 /* * * * * * * *
  *  PUSH_SWAP  *
@@ -64,7 +65,7 @@ void	rotate_a(t_node **stack_a);
 void	rotate_b(t_node **stack_b);
 void	rotate_r(t_node **stack_a, t_node **stack_b);
 
-void	reverse_rotate_a(t_node *stack_a);
-void	reverse_rotate_b(t_node *stack_b);
-void	reverse_rotate_r(t_node *stack_a, t_node *stack_b);
+void	reverse_rotate_a(t_node **stack_a);
+void	reverse_rotate_b(t_node **stack_b);
+void	reverse_rotate_r(t_node **stack_a, t_node **stack_b);
 #endif

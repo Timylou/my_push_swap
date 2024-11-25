@@ -12,28 +12,28 @@
 
 #include "push_swap.h"
 
-void	ft_sort_small_stack(t_node *stack, int size_stack)
+void	ft_sort_small_stack(t_node **stack, int size_stack)
 {
 	int	current_data;
 	int	next_data;
 
 	if (size_stack < 2)
 		return ;
-	current_data = stack->data;
-	next_data = stack->next->data;
+	current_data = (*stack)->data;
+	next_data = (*stack)->next->data;
 	if (current_data > next_data)
 		swap_a(stack);
 	return ;
 }
 
-void	ft_sort_three_stack(t_node *stack)
+void	ft_sort_three_stack(t_node **stack)
 {
 	int		i;
 	t_node	*temp;
 	t_node	*max;
 
-	max = stack;
-	temp = stack;
+	max = *stack;
+	temp = *stack;
 	i = 0;
 	while (i < 2)
 	{
@@ -46,7 +46,7 @@ void	ft_sort_three_stack(t_node *stack)
 		rotate_a(stack);
 	else if (max->index == 1)
 		reverse_rotate_a(stack);
-	if (!ft_is_sorted(stack))
+	if (!ft_is_sorted(*stack))
 		swap_a(stack);
 	return ;
 }

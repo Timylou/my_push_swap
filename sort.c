@@ -1,44 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-mens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 19:35:24 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/15 19:35:26 by yel-mens         ###   ########.fr       */
+/*   Created: 2024/11/25 14:09:18 by yel-mens          #+#    #+#             */
+/*   Updated: 2024/11/25 14:11:59 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_putstr(char *str)
+void	ft_sort_stacks(t_node **stack_a, t_node **stack_b)
 {
-	if (!str)
-		return ;
-	while (*str)
-	{
-		write(1, str++, 1);
-	}
-}
-
-int	ft_atoi(char *str)
-{
-	int	i;
-	int	sign;
-	int	nbr;
-
-	i = 0;
-	nbr = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	sign = -2 * (str[i] == '-') + 1;
-	i += (str[i] == '+' || str[i] == '-');
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = nbr * 10 + str[i] - '0';
-		i++;
-	}
-	nbr *= sign;
-	return (nbr);
+	(void) stack_a;
+	(void) stack_b;
+	return ;
 }

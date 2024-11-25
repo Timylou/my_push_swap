@@ -24,6 +24,7 @@ t_node	*ft_init_stack()
 	new_stack->prev = NULL;
 	new_stack->next = NULL;
 	new_stack->target = NULL;
+	return (new_stack);
 }
 
 int	ft_add_end_stack(t_node **stack, int data)
