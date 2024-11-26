@@ -6,7 +6,7 @@
 /*   By: yel-mens <yel-mens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:45:16 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/25 15:11:02 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/25 16:08:31 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static int	ft_add_to_stack(t_node **stack, int *sign, int *current_data)
 	if (!ft_add_end_stack(stack, *current_data))
 	{
 		ft_free_stacks(stack, NULL);
+		*stack = NULL;
 		return (0);
 	}
 	*current_data = 0;
@@ -65,13 +66,13 @@ static t_node	*ft_read_string(char *str)
 			sign = 1;
 		if ('9' >= str[i] && str[i] >= '0')
 			current_data = current_data * 10 + str[i] - '0';
-		if (str[i] == ' ')
+		if (str[i++] == ' ')
 		{
 			if (!ft_add_to_stack(&stack, &sign, &current_data))
 				return (NULL);
 		}
-		i++;
 	}
+	ft_add_to_stack(&stack, &sign, &current_data);
 	return (stack);
 }
 
@@ -98,7 +99,10 @@ t_node	*ft_parse(int argc, char **argv)
 	t_node	*stack;
 
 	if (argc < 2 || (argc == 2 && !argv[1][0]))
+	{
+		ft_putstr("Error\n");
 		return (NULL);
+	}
 	if (argc == 2)
 		stack = ft_read_string(argv[1]);
 	else

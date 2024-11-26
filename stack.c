@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-mens <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yel-mens <yel-mens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 21:33:28 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/15 21:33:30 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:03:39 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	*ft_init_stack()
 		return (NULL);
 	new_stack->data = -1;
 	new_stack->index = -1;
+	new_stack->push_cost = -1;
 	new_stack->prev = NULL;
 	new_stack->next = NULL;
 	new_stack->target = NULL;

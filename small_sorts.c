@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sorts.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-mens <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yel-mens <yel-mens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:16:37 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/15 14:17:25 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:53:05 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,30 @@ void	ft_sort_three_stack(t_node **stack)
 	if (!ft_is_sorted(*stack))
 		swap_a(stack);
 	return ;
+}
+
+void	ft_sort_four_stack(t_node **stack_a, t_node **stack_b)
+{
+	push_b(stack_a, stack_b);
+	ft_sort_three_stack(stack_a);
+	ft_set_target(*stack_b, *stack_a, 0);
+	if ((*stack_b)->target->index == 0)
+	{
+		push_a(stack_a, stack_b);
+		if (!ft_is_sorted(*stack_a))
+			rotate_a(stack_a);
+	}
+	else if ((*stack_b)->target->index == 1)
+	{
+		rotate_a(stack_a);
+		push_a(stack_a, stack_b);
+		reverse_rotate_a(stack_a);
+	}
+	else if ((*stack_b)->target->index == 2)
+	{
+		reverse_rotate_a(stack_a);
+		push_a(stack_a, stack_b);
+		rotate_a(stack_a);
+		rotate_a(stack_a);
+	}
 }
