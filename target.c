@@ -6,7 +6,7 @@
 /*   By: yel-mens <yel-mens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 11:40:32 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/26 15:10:10 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/26 16:28:37 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_node	*ft_find_closest_smaller(int data, t_node *dest, t_node *min)
 	closest_smaller = min;
 	while (dest)
 	{
-		if (dest->data < data && dest->data > closest_smaller
+		if (dest->data < data && dest->data > closest_smaller->data
 			&& dest->data > min->data)
 			closest_smaller = dest;
 		dest = dest->next;

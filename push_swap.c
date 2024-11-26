@@ -6,7 +6,7 @@
 /*   By: yel-mens <yel-mens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:50:25 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/26 14:39:01 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/26 19:19:39 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	else if (size_stack == 4)
 		ft_sort_four_stack(&stack_a, &stack_b);
 	else
-		ft_sort_stacks(&stack_a, &stack_b);
+		ft_sort_stacks(&stack_a, &stack_b, size_stack);
 	ft_free_stacks(&stack_a, &stack_b);
 	return (EXIT_SUCCESS);
 }

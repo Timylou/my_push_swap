@@ -4,7 +4,7 @@ CC		=	cc
 CFLAGS	=	-Wall -Werror -Wextra -g
 
 SRC		=	push_swap.c parse.c push.c swap.c rotate.c reverse.c stack.c utils.c \
-			sort.c small_sorts.c target.c
+			sort.c small_sorts.c target.c cost.c
 OBJ		=	$(SRC:.c=.o)
 
 all		:	$(NAME)

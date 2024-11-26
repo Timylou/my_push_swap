@@ -6,7 +6,7 @@
 /*   By: yel-mens <yel-mens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 21:33:28 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/26 14:03:39 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/26 19:23:22 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_node	*ft_init_stack()
 		return (NULL);
 	new_stack->data = -1;
 	new_stack->index = -1;
-	new_stack->push_cost = -1;
+	new_stack->cost = -1;
 	new_stack->prev = NULL;
 	new_stack->next = NULL;
 	new_stack->target = NULL;

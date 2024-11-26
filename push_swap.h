@@ -6,7 +6,7 @@
 /*   By: yel-mens <yel-mens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:27:02 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/26 14:10:16 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/26 19:04:10 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct s_node
 {
 	int				data;
 	int				index;
-	int				push_cost;
+	int				cost;
 	struct s_node	*prev;
 	struct s_node	*next;
 	struct s_node	*target;
@@ -49,10 +49,10 @@ void	ft_reset_index(t_node *stack);
 void	ft_sort_small_stack(t_node **stack, int size_stack);
 void	ft_sort_three_stack(t_node **stack);
 void	ft_sort_four_stack(t_node **stack_a, t_node **stack_b);
-void	ft_sort_stacks(t_node **stack_a, t_node **stack_b);
+void	ft_sort_stacks(t_node **stack_a, t_node **stack_b, int size);
 
 /* * * * * * * *
- *    TARGET   *
+ * TARGET/COST *
  *  OPERATIONS *
  * * * * * * * */
 
@@ -61,6 +61,9 @@ t_node	*ft_find_closest_smaller(int data, t_node *dest, t_node *min);
 t_node	*ft_find_max(t_node *stack);
 t_node	*ft_find_min(t_node *stack);
 void	ft_set_target(t_node *src, t_node *dest, int smaller);
+void	ft_set_costs(t_node *stack, int size_dest);
+void	ft_set_cheapest(t_node **stack_a, t_node **stack_b);
+void	ft_set_cheapest_back(t_node **stack_a, t_node **stack_b);
 
 /* * * * * * * *
  *  PUSH_SWAP  *
