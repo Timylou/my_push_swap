@@ -6,7 +6,7 @@
 /*   By: yel-mens <yel-mens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 17:03:15 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/26 19:28:52 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:49:40 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ void	ft_set_costs(t_node *stack, int size_dest)
 			stack->cost += stack->target->index;
 		else
 			stack->cost += size_dest - (stack->target->index);
-		if (stack->cost == 0)
-			return ;
 		stack = stack->next;
 	}
 }

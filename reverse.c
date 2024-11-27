@@ -6,7 +6,7 @@
 /*   By: yel-mens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 12:45:12 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/25 13:18:30 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:22:37 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static void	ft_reverse_stack(t_node **stack)
 		tmp = tmp->next;
 	(*stack)->prev = tmp;
 	tmp->next = *stack;
+	tmp->prev->next = NULL;
 	*stack = (*stack)->prev;
-	tmp = tmp->prev;
-	tmp->next = NULL;
+	(*stack)->prev = NULL;
 	ft_reset_index(*stack);
 }
 
@@ -57,3 +57,18 @@ void	reverse_rotate_r(t_node **stack_a, t_node **stack_b)
 	ft_reverse_stack(stack_b);
 	ft_putstr("rrr\n");
 }
+
+/*int main()
+{
+	t_node *a;
+
+	a = NULL;
+
+	ft_add_end_stack(&a, 2);
+	ft_add_end_stack(&a, 3);
+	ft_add_end_stack(&a, 1);
+
+	reverse_rotate_a(&a);
+
+	ft_free_stacks(&a, NULL);
+}*/
