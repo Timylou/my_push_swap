@@ -25,7 +25,7 @@ void	ft_sort_stacks(t_node **stack_a, t_node **stack_b, int size)
 		ft_set_cheapest(stack_a, stack_b);
 	}
 	ft_sort_three_stack(stack_a);
-	while (*stack_b)
+	while (ft_size_stack(*stack_b) > 0)
 	{
 		ft_set_target(*stack_b, *stack_a, 0);
 		ft_set_costs(*stack_b, ft_size_stack(*stack_a));

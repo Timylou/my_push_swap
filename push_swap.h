@@ -39,7 +39,7 @@ int		ft_atoi(char *str);
  *  OPERATIONS *
  * * * * * * * */
 
-t_node	*ft_init_stack();
+t_node	*ft_init_stack(void);
 int		ft_add_end_stack(t_node **stack, int data);
 int		ft_size_stack(t_node *stack);
 void	ft_free_stacks(t_node **stack_a, t_node **stack_b);

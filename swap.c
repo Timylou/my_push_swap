@@ -14,13 +14,22 @@
 
 static void	ft_swap(t_node **stack)
 {
-	(*stack)->prev = (*stack)->next;
-	(*stack)->index = 1;
-	(*stack)->next = (*stack)->next->next;
-	(*stack)->prev->next = (*stack);
-	(*stack) = (*stack)->prev;
-	(*stack)->index = 0;
-	(*stack)->prev = NULL;
+	t_node	*first;
+	t_node	*second;
+	t_node	*third;
+
+	first = *stack;
+	second = first->next;
+	third = second->next;
+	if (third)
+		third->prev = first;
+	first->prev = second;
+	first->next = third;
+	second->prev = NULL;
+	second->next = first;
+	first->index = 1;
+	second->index = 0;
+	*stack = second;
 }
 
 void	swap_a(t_node **stack)

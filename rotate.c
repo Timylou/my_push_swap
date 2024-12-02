@@ -46,7 +46,7 @@ void	rotate_a(t_node **stack_a)
 	if (!stack_a || !*stack_a)
 		return ;
 	if (ft_size_stack(*stack_a) < 2)
-	   return ;	
+		return ;
 	ft_shift_up(stack_a);
 	ft_putstr("ra\n");
 }
@@ -56,10 +56,9 @@ void	rotate_b(t_node **stack_b)
 	if (!stack_b || !*stack_b)
 		return ;
 	if (ft_size_stack(*stack_b) < 2)
-	   return ;	
+		return ;
 	ft_shift_up(stack_b);
 	ft_putstr("rb\n");
-
 }
 
 void	rotate_r(t_node **stack_a, t_node **stack_b)

@@ -22,7 +22,7 @@ static void	ft_push(t_node **src, t_node **dest)
 	to_push = *src;
 	*src = (*src)->next;
 	if (*src)
-	(*src)->prev = NULL;
+		(*src)->prev = NULL;
 	if (*dest)
 		(*dest)->prev = to_push;
 	to_push->next = *dest;

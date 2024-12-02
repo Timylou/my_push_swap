@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-t_node	*ft_init_stack()
+t_node	*ft_init_stack(void)
 {
-	t_node *new_stack;
+	t_node	*new_stack;
 
 	new_stack = malloc(sizeof(t_node));
 	if (!new_stack)
@@ -56,7 +56,7 @@ int	ft_size_stack(t_node *stack)
 {
 	int	i;
 
-	 i = 0;
+	i = 0;
 	while (stack)
 	{
 		stack = stack->next;
@@ -67,7 +67,7 @@ int	ft_size_stack(t_node *stack)
 
 void	ft_free_stacks(t_node **stack_a, t_node **stack_b)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (stack_a)
 	{

@@ -27,12 +27,12 @@ static void	ft_reverse_stack(t_node **stack)
 	ft_reset_index(*stack);
 }
 
-void 	reverse_rotate_a(t_node **stack_a)
+void	reverse_rotate_a(t_node **stack_a)
 {
 	if (!stack_a || !*stack_a)
 		return ;
 	if (ft_size_stack(*stack_a) < 2)
-	   return ;	
+		return ;
 	ft_reverse_stack(stack_a);
 	ft_putstr("rra\n");
 }
@@ -42,7 +42,7 @@ void	reverse_rotate_b(t_node **stack_b)
 	if (!stack_b || !*stack_b)
 		return ;
 	if (ft_size_stack(*stack_b) < 2)
-	   return ;	
+		return ;
 	ft_reverse_stack(stack_b);
 	ft_putstr("rrb\n");
 }
@@ -57,18 +57,3 @@ void	reverse_rotate_r(t_node **stack_a, t_node **stack_b)
 	ft_reverse_stack(stack_b);
 	ft_putstr("rrr\n");
 }
-
-/*int main()
-{
-	t_node *a;
-
-	a = NULL;
-
-	ft_add_end_stack(&a, 2);
-	ft_add_end_stack(&a, 3);
-	ft_add_end_stack(&a, 1);
-
-	reverse_rotate_a(&a);
-
-	ft_free_stacks(&a, NULL);
-}*/
