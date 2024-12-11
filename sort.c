@@ -16,8 +16,8 @@ void	ft_sort_stacks(t_node **stack_a, t_node **stack_b, int size)
 {
 	t_node	*min;
 
-	push_b(stack_a, stack_b);
-	push_b(stack_a, stack_b);
+	push_b(stack_a, stack_b, 1);
+	push_b(stack_a, stack_b, 1);
 	while (ft_size_stack(*stack_a) > 3)
 	{
 		ft_set_target(*stack_a, *stack_b, 1);
@@ -33,7 +33,7 @@ void	ft_sort_stacks(t_node **stack_a, t_node **stack_b, int size)
 	}
 	min = ft_find_min(*stack_a);
 	while (min->index && min->index < size / 2)
-		rotate_a(stack_a);
+		rotate_a(stack_a, 1);
 	while (min->index && min->index >= size / 2)
-		reverse_rotate_a(stack_a);
+		reverse_rotate_a(stack_a, 1);
 }

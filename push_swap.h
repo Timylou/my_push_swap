@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-mens <yel-mens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yel-mens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:27:02 by yel-mens          #+#    #+#             */
-/*   Updated: 2024/11/26 19:04:10 by yel-mens         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:18:54 by yel-mens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,18 @@ void	ft_set_cheapest_back(t_node **stack_a, t_node **stack_b);
  *  OPERATION  *
  * * * * * * * */
 
-void	push_a(t_node **stack_a, t_node **stack_b);
-void	push_b(t_node **stack_a, t_node **stack_b);
+void	push_a(t_node **stack_a, t_node **stack_b, int print);
+void	push_b(t_node **stack_a, t_node **stack_b, int print);
 
-void	swap_a(t_node **stack_a);
-void	swap_b(t_node **stack_b);
-void	swap_s(t_node **stack_a, t_node **stack_b);
+void	swap_a(t_node **stack_a, int print);
+void	swap_b(t_node **stack_b, int print);
+void	swap_s(t_node **stack_a, t_node **stack_b, int print);
 
-void	rotate_a(t_node **stack_a);
-void	rotate_b(t_node **stack_b);
-void	rotate_r(t_node **stack_a, t_node **stack_b);
+void	rotate_a(t_node **stack_a, int print);
+void	rotate_b(t_node **stack_b, int print);
+void	rotate_r(t_node **stack_a, t_node **stack_b, int print);
 
-void	reverse_rotate_a(t_node **stack_a);
-void	reverse_rotate_b(t_node **stack_b);
-void	reverse_rotate_r(t_node **stack_a, t_node **stack_b);
+void	reverse_rotate_a(t_node **stack_a, int print);
+void	reverse_rotate_b(t_node **stack_b, int print);
+void	reverse_rotate_r(t_node **stack_a, t_node **stack_b, int print);
 #endif

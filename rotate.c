@@ -41,27 +41,29 @@ static void	ft_shift_up(t_node **stack)
 	ft_reset_index(*stack);
 }
 
-void	rotate_a(t_node **stack_a)
+void	rotate_a(t_node **stack_a, int print)
 {
 	if (!stack_a || !*stack_a)
 		return ;
 	if (ft_size_stack(*stack_a) < 2)
 		return ;
 	ft_shift_up(stack_a);
-	ft_putstr("ra\n");
+	if (print)
+		ft_putstr("ra\n");
 }
 
-void	rotate_b(t_node **stack_b)
+void	rotate_b(t_node **stack_b, int print)
 {
 	if (!stack_b || !*stack_b)
 		return ;
 	if (ft_size_stack(*stack_b) < 2)
 		return ;
 	ft_shift_up(stack_b);
-	ft_putstr("rb\n");
+	if (print)
+		ft_putstr("rb\n");
 }
 
-void	rotate_r(t_node **stack_a, t_node **stack_b)
+void	rotate_r(t_node **stack_a, t_node **stack_b, int print)
 {
 	if (!stack_a || !stack_b || !*stack_a || !*stack_b)
 		return ;
@@ -69,5 +71,6 @@ void	rotate_r(t_node **stack_a, t_node **stack_b)
 		return ;
 	ft_shift_up(stack_a);
 	ft_shift_up(stack_b);
-	ft_putstr("rr\n");
+	if (print)
+		ft_putstr("rr\n");
 }

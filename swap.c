@@ -32,23 +32,25 @@ static void	ft_swap(t_node **stack)
 	*stack = second;
 }
 
-void	swap_a(t_node **stack)
+void	swap_a(t_node **stack, int print)
 {
 	if (!stack || !*stack || ft_size_stack(*stack) < 2)
 		return ;
 	ft_swap(stack);
-	ft_putstr("sa\n");
+	if (print)
+		ft_putstr("sa\n");
 }
 
-void	swap_b(t_node **stack)
+void	swap_b(t_node **stack, int print)
 {
 	if (!stack || !*stack || ft_size_stack(*stack) < 2)
 		return ;
 	ft_swap(stack);
-	ft_putstr("sb\n");
+	if (print)
+		ft_putstr("sb\n");
 }
 
-void	swap_s(t_node **stack_a, t_node **stack_b)
+void	swap_s(t_node **stack_a, t_node **stack_b, int print)
 {
 	if (!stack_a || !*stack_a || ft_size_stack(*stack_a) < 2)
 		return ;
@@ -56,5 +58,6 @@ void	swap_s(t_node **stack_a, t_node **stack_b)
 		return ;
 	ft_swap(stack_a);
 	ft_swap(stack_b);
-	ft_putstr("ss\n");
+	if (print)
+		ft_putstr("ss\n");
 }

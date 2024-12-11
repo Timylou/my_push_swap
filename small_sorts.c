@@ -22,7 +22,7 @@ void	ft_sort_small_stack(t_node **stack, int size_stack)
 	current_data = (*stack)->data;
 	next_data = (*stack)->next->data;
 	if (current_data > next_data)
-		swap_a(stack);
+		swap_a(stack, 1);
 	return ;
 }
 
@@ -43,36 +43,36 @@ void	ft_sort_three_stack(t_node **stack)
 		i++;
 	}
 	if (max->index == 0)
-		rotate_a(stack);
+		rotate_a(stack, 1);
 	else if (max->index == 1)
-		reverse_rotate_a(stack);
+		reverse_rotate_a(stack, 1);
 	if (!ft_is_sorted(*stack))
-		swap_a(stack);
+		swap_a(stack, 1);
 	return ;
 }
 
 void	ft_sort_four_stack(t_node **stack_a, t_node **stack_b)
 {
-	push_b(stack_a, stack_b);
+	push_b(stack_a, stack_b, 1);
 	ft_sort_three_stack(stack_a);
 	ft_set_target(*stack_b, *stack_a, 0);
 	if ((*stack_b)->target->index == 0)
 	{
-		push_a(stack_a, stack_b);
+		push_a(stack_a, stack_b, 1);
 		if (!ft_is_sorted(*stack_a))
-			rotate_a(stack_a);
+			rotate_a(stack_a, 1);
 	}
 	else if ((*stack_b)->target->index == 1)
 	{
-		rotate_a(stack_a);
-		push_a(stack_a, stack_b);
-		reverse_rotate_a(stack_a);
+		rotate_a(stack_a, 1);
+		push_a(stack_a, stack_b, 1);
+		reverse_rotate_a(stack_a, 1);
 	}
 	else if ((*stack_b)->target->index == 2)
 	{
-		reverse_rotate_a(stack_a);
-		push_a(stack_a, stack_b);
-		rotate_a(stack_a);
-		rotate_a(stack_a);
+		reverse_rotate_a(stack_a, 1);
+		push_a(stack_a, stack_b, 1);
+		rotate_a(stack_a, 1);
+		rotate_a(stack_a, 1);
 	}
 }

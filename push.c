@@ -38,22 +38,24 @@ static void	ft_reload_index(t_node *stack, int sign)
 	}
 }
 
-void	push_a(t_node **stack_a, t_node **stack_b)
+void	push_a(t_node **stack_a, t_node **stack_b, int print)
 {
 	if (!stack_a || !stack_b || !*stack_b)
 		return ;
 	ft_reload_index(*stack_a, 1);
 	ft_reload_index(*stack_b, -1);
 	ft_push(stack_b, stack_a);
-	ft_putstr("pa\n");
+	if (print)
+		ft_putstr("pa\n");
 }
 
-void	push_b(t_node **stack_a, t_node **stack_b)
+void	push_b(t_node **stack_a, t_node **stack_b, int print)
 {
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
 	ft_reload_index(*stack_b, 1);
 	ft_reload_index(*stack_a, -1);
 	ft_push(stack_a, stack_b);
-	ft_putstr("pb\n");
+	if (print)
+		ft_putstr("pb\n");
 }
