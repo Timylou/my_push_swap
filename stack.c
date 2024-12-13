@@ -28,11 +28,16 @@ t_node	*ft_init_stack(void)
 	return (new_stack);
 }
 
-int	ft_add_end_stack(t_node **stack, int data)
+int	ft_add_end_stack(t_node **stack, long long int data)
 {
 	t_node	*new_stack;
 	t_node	*temp;
 
+	if (data > 2147483647 || data < -2147483648)
+	{
+		ft_putstr("Error\n");
+		return (0);
+	}
 	new_stack = ft_init_stack();
 	if (!new_stack)
 		return (0);

@@ -22,11 +22,11 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	ft_atoi(char *str)
+long long int	ft_atoi(char *str)
 {
-	int	i;
-	int	sign;
-	int	nbr;
+	int				i;
+	int				sign;
+	long long int	nbr;
 
 	i = 0;
 	nbr = 0;

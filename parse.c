@@ -23,7 +23,11 @@ static int	ft_check_str(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] != ' ' && !('9' >= str[i] && str[i] >= 0) && str[i] != '-')
+		if (str[i] != ' ' && !('9' >= str[i] && str[i] >= '0')
+			&& str[i] != '-' && str[i] != '+')
+			check = 0;
+		if ((str[i] == '-' || str[i] == '+')
+			&& !('9' >= str[i + 1] && str[i + 1] >= '0'))
 			check = 0;
 		i++;
 	}
@@ -32,27 +36,27 @@ static int	ft_check_str(char *str)
 	return (check);
 }
 
-static int	ft_add_to_stack(t_node **stack, int *sign, int *current_data)
+static int	ft_add_to_stack(t_node **stk, int *sign, long long int *data)
 {
 	if (*sign)
-		*current_data *= -1;
-	if (!ft_add_end_stack(stack, *current_data))
+		*data *= -1;
+	if (!ft_add_end_stack(stk, *data))
 	{
-		ft_free_stacks(stack, NULL);
-		*stack = NULL;
+		ft_free_stacks(stk, NULL);
+		*stk = NULL;
 		return (0);
 	}
-	*current_data = 0;
+	*data = 0;
 	*sign = 0;
 	return (1);
 }
 
 static t_node	*ft_read_string(char *str)
 {
-	int		i;
-	int		current_data;
-	int		sign;
-	t_node	*stack;
+	int					i;
+	long long int		current_data;
+	int					sign;
+	t_node				*stack;
 
 	if (!ft_check_str(str))
 		return (NULL);
@@ -86,9 +90,15 @@ static t_node	*ft_read_argv(int argc, char **argv)
 	while (i < argc)
 	{
 		if (!ft_check_str(argv[i]))
+		{
+			ft_free_stacks(&stack, NULL);
 			return (NULL);
+		}
 		if (!ft_add_end_stack(&stack, ft_atoi(argv[i])))
+		{
+			ft_free_stacks(&stack, NULL);
 			return (NULL);
+		}
 		i++;
 	}
 	return (stack);

@@ -42,7 +42,6 @@ void	ft_up_chpst(t_node **a, t_node **b, t_node *chp, int size[2])
 		{
 			rotate_a(a, 1);
 			reverse_rotate_b(b, 1);
-
 		}
 		else if (chp->index >= size[0] / 2 && chp->target->index < size[1] / 2)
 		{
